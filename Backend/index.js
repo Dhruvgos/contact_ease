@@ -7,14 +7,14 @@ const contact = require("./models/contacts");
 // const getallcontact = require('./middleware/fetchUser')
 const jwt = require("jsonwebtoken");
 const fetchUser = require("./middleware/fetchUser");
-const SECRET_KEY = "DhruvGoswami"
+const SECRET_KEY = process.env.SECRET;
 
 async function startServer() {
 
     try {
         const app = express();
         await connectToMongo();
-        const port = process.env.PORT || 5000;
+        const port = process.env.PORT || 8000;
         app.use(express.json());
         app.use(cors({ origin: 'http://localhost:3000' }));
         app.post("/createuser", async (req, res) => {
