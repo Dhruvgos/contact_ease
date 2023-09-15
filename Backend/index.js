@@ -14,7 +14,7 @@ async function startServer() {
     try {
         const app = express();
         await connectToMongo();
-        const port = process.env.PORT;
+        const port = process.env.PORT || 5000;
         app.use(express.json());
         app.use(cors({ origin: 'http://localhost:3000' }));
         app.post("/createuser", async (req, res) => {
