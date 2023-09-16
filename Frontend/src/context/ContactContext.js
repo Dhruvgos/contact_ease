@@ -9,7 +9,7 @@ const ContactState = (props) => {
 
   const getAllContacts = async (token1) => {
     // const response = await fetch("http://localhost:5000/getcontacts", {
-    const response = await fetch("https://contacteasebackend.onrender.com/getcontacts", {
+    const response = await fetch("http://localhost:5000/getcontacts", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const ContactState = (props) => {
   };
 
   const addContact = async (email,phone,name) => {
-    const response = await fetch("https://contacteasebackend.onrender.com/addcontact", {
+    const response = await fetch("http://localhost:5000/addcontact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const ContactState = (props) => {
 
   const deleteContact = async (id) => {
     try {
-      const response = await fetch(`https://contacteasebackend.onrender.com/deletecontact/${id}`, {
+      const response = await fetch(`http://localhost:5000/deletecontact/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const ContactState = (props) => {
 
   const updateContact = async(id,name,email,phone)=>{
       
-        const response = await fetch(`https://contacteasebackend.onrender.com/updatecontact/${id}`,{
+        const response = await fetch(`http://localhost:5000/updatecontact/${id}`,{
           method:'PUT',
           headers:{
             "Content-Type": "application/json",
